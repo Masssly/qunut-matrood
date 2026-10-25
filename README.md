@@ -1,35 +1,31 @@
 # Duʿāʾ al-Qunūt · ʿAbdallāh Muḥammad al-Maṭrūd
 
-An open, phone-first edition of the qunūt recited by Shaykh ʿAbdallāh Muḥammad al-Maṭrūd, prepared by Mohammed Sadat Abdulai.
+An open, phone-first reading edition of the qunūt text prepared by Mohammed Sadat Abdulai.
 
 ## Project goals
 
-- A comfortable mobile reading experience for the text.
-- Audio listening through the YouTube recording supplied for this project.
-- A carefully checked transcript based on the supplied 22-page PDF and audio.
-- Clear separation between the original source, transcription, editorial corrections, transliteration, and any future translation.
-- A downloadable, print-friendly edition once the text has been checked.
+- A comfortable mobile reading experience.
+- A carefully checked transcription of the supplied 22-page PDF.
+- Clear separation between the source text, transcription, editorial notes, transliteration, and any future translation.
+- Adjustable text size and a downloadable, print-friendly edition once the text has been checked.
+- A static website that can be hosted free on GitHub Pages.
 
 ## Editorial status
 
-The supplied PDF is image-based and its text has not yet been reliably extracted. The transcript must be checked against the pages and the recording before being presented as authoritative. Do not silently correct or complete uncertain Arabic, transliteration, or wording.
-
-## Source recording
-
-https://www.youtube.com/watch?v=DBngjJNK_nQ
+The supplied PDF is image-based and its text has not yet been reliably extracted. The transcription must be checked page by page before it is presented as authoritative. Do not silently correct or complete uncertain Arabic, transliteration, or wording. See [REVIEW.md](REVIEW.md).
 
 ## Development
 
-The first version is a lightweight static site that can be hosted on GitHub Pages. No paid hosting or service is required.
+The site is plain HTML, CSS, and JavaScript; no build step or paid service is required.
 
-## Suggested workflow
+## Publishing
 
-1. Transcribe the supplied PDF page by page.
-2. Compare the text with the recording and mark uncertain passages.
-3. Proofread the text, especially Arabic spelling, diacritics, and repeated phrases.
-4. Add transliteration or translations only as distinct, labelled layers.
-5. Generate a print-ready PDF and publish through GitHub Pages.
+The GitHub Actions workflow in `.github/workflows/pages.yml` publishes the repository root to GitHub Pages on pushes to `main`. The expected URL is:
+
+https://masssly.github.io/qunut-matrood/
+
+If Pages has not previously been enabled for the repository, the workflow attempts to enable it using the GitHub Pages Actions deployment source.
 
 ## Credits
 
-Prepared by Mohammed Sadat Abdulai. Recitation: Shaykh ʿAbdallāh Muḥammad al-Maṭrūd. The linked YouTube recording remains hosted by its uploader; this project embeds it for convenient listening and does not claim ownership of it.
+Prepared by Mohammed Sadat Abdulai. This project is an independent reading edition; source wording will be preserved carefully and uncertainties documented rather than guessed.
