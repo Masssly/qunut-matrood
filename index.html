@@ -3,50 +3,159 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#ffffff">
-<meta name="description" content="A careful, open reading edition of Du'a al-Qunut recited by Shaykh Abdullah Muhammad al-Matrood.">
-<title>Duʿāʾ al-Qunūt · al-Maṭrūd</title>
+<meta name="theme-color" content="#fefefe" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#2c2621" media="(prefers-color-scheme: dark)">
+<meta name="description" content="A careful, open reading edition of Duʿāʾ al-Qunūt recited by Shaykh ʿAbdallāh Muḥammad al-Maṭrūd.">
+<title>Duʿāʾ al-Qunūt · ʿAbdallāh Muḥammad al-Maṭrūd</title>
+<link rel="icon" href="favicon.ico">
 <style>
-:root{color-scheme:light;--paper:#ffffff;--card:#ffffff;--ink:#202b27;--muted:#68736c;--line:#e7e9e7;--green:#235b49;--gold:#b28b4b}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.65}
-header{padding:22px max(22px,calc((100vw - 940px)/2));border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:16px}.brand{font-size:13px;font-weight:750;letter-spacing:.12em;text-transform:uppercase;color:var(--green)}.edition{font-size:12px;color:var(--muted)}
-main{max-width:940px;margin:auto;padding:46px 22px 72px}.hero{max-width:680px;margin:0 auto 34px;text-align:center}.eyebrow{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--green);font-weight:700}.hero h1{font-family:Georgia,"Times New Roman",serif;font-weight:500;font-size:clamp(35px,7vw,58px);line-height:1.15;letter-spacing:-.035em;margin:12px 0}.subtitle{color:var(--muted);margin:0 auto;max-width:530px}.credit{font-size:13px;color:var(--muted);margin-top:14px}
-.listen,.reading,.notes{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:clamp(18px,4vw,30px);margin:18px 0;box-shadow:0 5px 20px #1c2a2010}.section-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:16px}.section-head h2{font-size:18px;margin:0;font-weight:700}.small{font-size:12px;color:var(--muted)}.video{position:relative;aspect-ratio:16/9;background:#e9e8df;border-radius:12px;overflow:hidden}.video iframe{width:100%;height:100%;border:0}.external{display:inline-block;color:var(--green);font-size:13px;font-weight:650;margin-top:12px;text-decoration-thickness:1px;text-underline-offset:3px}
-.status{display:flex;align-items:flex-start;gap:12px;background:#f2f0e7;border-radius:12px;padding:16px}.dot{width:8px;height:8px;flex:none;border-radius:50%;background:var(--gold);margin-top:8px}.status p{margin:0;font-size:14px}.status strong{display:block;margin-bottom:3px}
-.toolbar{display:flex;flex-wrap:wrap;gap:8px}.toolbar button{font:inherit;font-size:13px;padding:8px 12px;border:1px solid var(--line);background:transparent;border-radius:999px;color:var(--ink);cursor:pointer}.toolbar button:hover{border-color:var(--green);color:var(--green)}
-.text-area{margin-top:22px;padding:26px 0;border-top:1px solid var(--line);text-align:center}.arabic{font-family:"Noto Naskh Arabic","Amiri","Traditional Arabic",serif;font-size:clamp(25px,5vw,36px);line-height:2.15;direction:rtl}.placeholder{max-width:530px;margin:12px auto 0;color:var(--muted);font-size:14px}
-footer{border-top:1px solid var(--line);padding:22px;text-align:center;color:var(--muted);font-size:12px}a{color:var(--green)}
-@media(min-width:700px){.layout{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:start}.layout .listen,.layout .reading{margin:0}.reading{min-height:100%}}
+@font-face{font-family:"Amiri";src:url("fonts/Amiri-Regular.ttf") format("truetype");font-display:swap}
+@font-face{font-family:"Amiri";font-weight:700;src:url("fonts/Amiri-Bold.ttf") format("truetype");font-display:swap}
+
+:root{
+  color-scheme:light;
+  --background:oklch(1 0 0);
+  --foreground:oklch(0.22 0.012 80);
+  --ink:oklch(0.16 0.015 80);
+  --card:oklch(1 0 0);
+  --muted:oklch(0.97 0.003 85);
+  --muted-foreground:oklch(0.5 0.01 80);
+  --secondary:oklch(0.965 0.004 85);
+  --secondary-foreground:oklch(0.32 0.04 80);
+  --border:oklch(0.91 0.005 85);
+  --gold:oklch(0.48 0.09 80);
+  --primary-foreground:oklch(1 0 0);
+  --sun:oklch(0.92 0.08 90);
+  --sun-foreground:oklch(0.42 0.09 75);
+}
+@media(prefers-color-scheme:dark){
+  :root{
+    color-scheme:dark;
+    --background:oklch(0.18 0.012 75);
+    --foreground:oklch(0.9 0.02 85);
+    --ink:oklch(0.95 0.015 85);
+    --card:oklch(0.22 0.014 75);
+    --muted:oklch(0.25 0.015 75);
+    --muted-foreground:oklch(0.7 0.025 85);
+    --secondary:oklch(0.27 0.02 75);
+    --secondary-foreground:oklch(0.88 0.03 85);
+    --border:oklch(0.32 0.02 75);
+    --gold:oklch(0.78 0.11 85);
+    --primary-foreground:oklch(0.2 0.02 75);
+    --sun:oklch(0.42 0.07 85);
+    --sun-foreground:oklch(0.92 0.08 90);
+  }
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--background);color:var(--foreground);font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.65;-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent}
+
+.label{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+
+header{position:sticky;top:0;z-index:10;padding:16px max(20px,calc((100vw - 680px)/2));border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;gap:16px;background:color-mix(in oklch,var(--background) 90%,transparent);backdrop-filter:blur(8px)}
+.edition{font-size:12px;color:var(--muted-foreground)}
+
+main{max-width:680px;margin:auto;padding:12px 20px 64px}
+
+.hero{max-width:520px;margin:48px auto 8px;text-align:center}
+.hero .arabic-title{font-family:"Amiri",serif;font-size:clamp(34px,8vw,52px);line-height:1.6;color:var(--ink);direction:rtl}
+.hero h1{font-family:"Amiri",Georgia,"Times New Roman",serif;font-weight:700;font-size:clamp(26px,5.5vw,34px);letter-spacing:-.01em;margin:4px 0 0}
+.hero .by{font-family:"Amiri",Georgia,serif;color:var(--muted-foreground);margin:6px 0 0}
+.divider{width:64px;height:1px;margin:22px auto;background:color-mix(in oklch,var(--gold) 50%,transparent)}
+.subtitle{color:var(--muted-foreground);margin:0 auto;max-width:460px;font-size:14px}
+.credit{font-size:13px;color:var(--muted-foreground);margin-top:14px}
+
+.card{background:var(--card);border:1px solid var(--border);border-radius:1.25rem;padding:clamp(18px,4vw,26px);margin:16px 0}
+.section-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:14px}
+.small{font-size:12px;color:var(--muted-foreground)}
+
+.note{display:flex;align-items:flex-start;gap:10px;background:var(--secondary);color:var(--secondary-foreground);border-radius:.875rem;padding:12px 14px;font-size:13px}
+.badge{display:inline-flex;align-items:center;flex:none;border-radius:999px;padding:2px 8px;font-size:11px;font-weight:600;background:var(--sun);color:var(--sun-foreground);white-space:nowrap}
+
+.text-area{margin-top:20px;padding:24px 0 4px;border-top:1px solid var(--border);text-align:center}
+.arabic{font-family:"Amiri",serif;font-size:clamp(24px,5vw,34px);line-height:2.1;direction:rtl;color:var(--ink)}
+.placeholder{max-width:480px;margin:14px auto 0;color:var(--muted-foreground);font-size:13px}
+
+.seg{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;background:var(--muted);border-radius:999px;padding:4px;margin-top:20px}
+.seg button{font:inherit;font-size:13px;font-weight:600;padding:10px 8px;border:0;background:transparent;border-radius:999px;color:var(--muted-foreground);cursor:pointer}
+.seg button.active{background:var(--card);color:var(--foreground);box-shadow:0 1px 3px color-mix(in oklch,var(--ink) 12%,transparent)}
+
+footer{border-top:1px solid var(--border);padding:22px 20px;text-align:center;color:var(--muted-foreground);font-size:12px}
+footer .compiled{margin-top:6px}
+a{color:var(--gold)}
+
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
-<header><div class="brand">Qunūt · Open Edition</div><div class="edition">Work in progress · 2026</div></header>
+<header>
+  <span class="label">Duʿāʾ al-Qunūt</span>
+  <span class="edition">Open edition · 2026</span>
+</header>
 <main>
+
 <section class="hero">
-<div class="eyebrow">A supplication in recitation</div>
-<h1>Duʿāʾ al-Qunūt</h1>
-<p class="subtitle">A carefully prepared reading edition of Duʿāʾ al-Qunūt associated with Shaykh ʿAbdallāh Muḥammad al-Maṭrūd.</p>
-<p class="credit">Prepared by Mohammed Sadat Abdulai</p>
+  <p class="arabic-title" lang="ar" dir="rtl">دعاء القنوت</p>
+  <h1>Duʿāʾ al-Qunūt</h1>
+  <p class="by">ʿAbdallāh Muḥammad al-Maṭrūd</p>
+  <div class="divider"></div>
+  <p class="subtitle">A carefully prepared reading edition of the qunūt recited by Shaykh ʿAbdallāh Muḥammad al-Maṭrūd.</p>
+  <p class="credit">Prepared by Mohammed Sadat Abdulai</p>
 </section>
-<section class="reading">
-<div class="section-head"><h2>The qunūt</h2><span class="small">Edition 0.1 · in preparation</span></div>
-<div class="status"><span class="dot"></span><p><strong>Text is being prepared</strong>The supplied 22-page document is image-based. The transcription needs careful checking against the original pages before it can be published as a reliable reading text.</p></div>
-<div class="text-area">
-<div class="arabic" lang="ar" dir="rtl">الدعاء قيد المراجعة</div>
-<p class="placeholder">The verified text will appear here. Arabic script, transliteration, and any translation will be kept as separate, clearly labelled reading layers.</p>
-</div>
-<div class="toolbar" aria-label="Reading options"><button type="button" id="larger">A+ Larger text</button><button type="button" id="smaller">A− Smaller text</button><button type="button" id="reset">Reset size</button></div>
+
+<section class="card">
+  <div class="section-head">
+    <span class="label">The qunūt</span>
+    <span class="small">Edition 0.1</span>
+  </div>
+  <div class="note">
+    <span class="badge">Draft · not yet proofread</span>
+    <span>The supplied 22-page document is image-based. The transcription needs careful checking against the original pages before it can be published as a reliable reading text.</span>
+  </div>
+  <div class="text-area">
+    <p class="arabic" lang="ar" dir="rtl">الدعاء قيد المراجعة</p>
+    <p class="placeholder">The verified text will appear here. Arabic script, transliteration, and any translation will be kept as separate, clearly labelled reading layers.</p>
+  </div>
+  <div class="seg" role="group" aria-label="Reading text size">
+    <button type="button" id="smaller" aria-label="Smaller text">A−</button>
+    <button type="button" id="reset" aria-label="Reset text size">Reset</button>
+    <button type="button" id="larger" aria-label="Larger text">A+</button>
+  </div>
 </section>
-<section class="notes">
-<div class="section-head"><h2>About this edition</h2><span class="small">Editorial note</span></div>
-<p style="margin-top:0">This project aims to present your prepared qunūt text in a clear, accessible reading edition. The supplied document is the starting point, and its wording will be preserved carefully during transcription and review.</p>
-<p class="small">Arabic text, transliteration, and any future translations will be labelled separately. Uncertain readings should be flagged for review rather than guessed.</p>
+
+<section class="card">
+  <div class="section-head">
+    <span class="label">About this edition</span>
+  </div>
+  <p style="margin-top:0">This project presents the prepared qunūt text in a clear, accessible reading edition. The supplied document is the starting point, and its wording will be preserved carefully during transcription and review.</p>
+  <p class="small" style="margin-bottom:0">Arabic text, transliteration, and any future translations will be labelled separately. Uncertain readings are flagged for review rather than guessed.</p>
 </section>
+
 </main>
-<footer>Prepared by Mohammed Sadat Abdulai</footer>
+<footer>
+  Prepared by Mohammed Sadat Abdulai
+  <p class="compiled">Companion edition to <a href="https://masssly.github.io/wird-al-latif/" target="_blank" rel="noreferrer">al-Wird al-Laṭīf</a></p>
+</footer>
 <script>
-(()=>{const el=document.querySelector('.arabic');let size=Number(localStorage.getItem('qunut-text-size'))||36;const draw=()=>{el.style.fontSize='clamp(25px, 5vw, '+size+'px)';};document.getElementById('larger').addEventListener('click',()=>{size=Math.min(56,size+2);localStorage.setItem("qunut-text-size",size);draw();});document.getElementById('smaller').addEventListener('click',()=>{size=Math.max(24,size-2);localStorage.setItem("qunut-text-size",size);draw();});document.getElementById('reset').addEventListener('click',()=>{size=36;localStorage.setItem("qunut-text-size",size);draw();});draw();})();
+(()=>{
+  const el=document.querySelector('.arabic');
+  const sizes=[24,30,36,42,50];
+  const DEFAULT_I=1;
+  const raw=localStorage.getItem('qunut-text-size-i');
+  let i=raw===null?DEFAULT_I:Number(raw);
+  if(!Number.isInteger(i)||i<0||i>=sizes.length) i=DEFAULT_I;
+  const buttons={smaller:document.getElementById('smaller'),reset:document.getElementById('reset'),larger:document.getElementById('larger')};
+  const draw=()=>{
+    el.style.fontSize=sizes[i]+'px';
+    localStorage.setItem('qunut-text-size-i',i);
+    buttons.reset.classList.toggle('active', i===DEFAULT_I);
+  };
+  buttons.larger.addEventListener('click',()=>{i=Math.min(sizes.length-1,i+1);draw();});
+  buttons.smaller.addEventListener('click',()=>{i=Math.max(0,i-1);draw();});
+  buttons.reset.addEventListener('click',()=>{i=DEFAULT_I;draw();});
+  draw();
+})();
 </script>
 </body>
 </html>
