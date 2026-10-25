@@ -2,6 +2,8 @@
 
 An open, phone-first reading edition of the qunūt text prepared by Mohammed Sadat Abdulai.
 
+**Website:** https://masssly.github.io/qunut-matrood/
+
 ## Project goals
 
 - A comfortable mobile reading experience.
