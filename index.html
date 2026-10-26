@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#fefefe" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#2c2621" media="(prefers-color-scheme: dark)">
-<meta name="description" content="A careful, open reading edition of Duʿāʾ al-Qunūt recited by Shaykh ʿAbdallāh Muḥammad al-Maṭrūd, transliterated by Mohammed Sadat Abdulai.">
+<meta name="description" content="A careful, open reading edition of Duʿāʾ al-Qunūt recited by Shaykh ʿAbdallāh Muḥammad al-Maṭrūd: Arabic, transliteration, English and German.">
 <title>Duʿāʾ al-Qunūt · ʿAbdallāh Muḥammad al-Maṭrūd</title>
 <link rel="icon" href="favicon.ico">
 <style>
@@ -73,15 +73,29 @@ main{max-width:680px;margin:auto;padding:12px 20px 64px}
 .note{display:flex;flex-direction:column;align-items:flex-start;gap:8px;background:var(--secondary);color:var(--secondary-foreground);border-radius:.875rem;padding:12px 14px;font-size:13px}
 .badge{display:inline-flex;align-items:center;flex:none;border-radius:999px;padding:2px 8px;font-size:11px;font-weight:600;background:var(--sun);color:var(--sun-foreground);white-space:nowrap}
 
-.seg{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;background:var(--muted);border-radius:999px;padding:4px;margin:18px 0 6px;position:sticky;top:64px;z-index:5}
-.seg button{font:inherit;font-size:13px;font-weight:600;padding:10px 8px;border:0;background:transparent;border-radius:999px;color:var(--muted-foreground);cursor:pointer}
+.settings{position:sticky;top:64px;z-index:5;background:var(--card);padding-top:4px;margin-top:4px}
+.settings-row{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:10px 0}
+.settings-row .rowlabel{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted-foreground);flex:none}
+.toggle{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;padding:7px 12px;border-radius:999px;border:1px solid var(--border);background:transparent;color:var(--foreground);cursor:pointer}
+.toggle[aria-pressed="true"]{background:var(--gold);border-color:var(--gold);color:var(--primary-foreground)}
+.seg{display:grid;gap:4px;background:var(--muted);border-radius:999px;padding:4px}
+.seg.size3{grid-template-columns:repeat(3,1fr)}
+.seg.lang4{grid-template-columns:repeat(4,1fr)}
+.seg button{font:inherit;font-size:12px;font-weight:600;padding:9px 6px;border:0;background:transparent;border-radius:999px;color:var(--muted-foreground);cursor:pointer}
 .seg button.active{background:var(--card);color:var(--foreground);box-shadow:0 1px 3px color-mix(in oklch,var(--ink) 12%,transparent)}
+.seg button:disabled{opacity:.45;cursor:default}
+.seg button .soon{display:block;font-size:9px;font-weight:600;letter-spacing:.04em;opacity:.8}
 
-.reading-text{margin-top:14px;padding-top:18px;border-top:1px solid var(--border)}
-.reading-text .pagemark{font-size:10px;color:var(--muted-foreground);text-align:center;letter-spacing:.14em;text-transform:uppercase;opacity:.55;margin:26px 0 10px}
-.reading-text .pagemark:first-child{margin-top:0}
-.reading-text p{font-family:"Amiri",serif;color:var(--ink);margin:0.55em 0;font-size:var(--lat,19px);line-height:1.9}
-.reading-text p.open{margin-top:1.35em;font-weight:700}
+.reading-text{margin-top:14px;padding-top:4px}
+.reading-text .pagemark{font-size:10px;color:var(--muted-foreground);text-align:center;letter-spacing:.14em;text-transform:uppercase;opacity:.55;margin:26px 0 10px;border-top:1px solid var(--border);padding-top:14px}
+.reading-text .pagemark:first-child{margin-top:0;border-top:0;padding-top:0}
+.line{margin:0 0 1.1em}
+.line.open{margin-top:1.6em}
+.line .ar{font-family:"Amiri",serif;color:var(--ink);direction:rtl;font-size:var(--ar,28px);line-height:2}
+.line.open .ar{font-weight:700}
+.line .lat{font-family:"Amiri",serif;font-style:italic;color:var(--foreground);opacity:.82;margin-top:.3em;font-size:var(--lat,16px);line-height:1.7}
+.line .meaning{color:var(--muted-foreground);margin-top:.3em;font-size:var(--lat,16px);line-height:1.6}
+.coming-soon{font-size:13px;color:var(--muted-foreground);background:var(--secondary);border-radius:.75rem;padding:10px 12px;margin-bottom:10px}
 
 footer{border-top:1px solid var(--border);padding:22px 20px;text-align:center;color:var(--muted-foreground);font-size:12px}
 footer .compiled{margin-top:6px}
@@ -102,33 +116,57 @@ a{color:var(--gold)}
   <h1>Duʿāʾ al-Qunūt</h1>
   <p class="by">ʿAbdallāh Muḥammad al-Maṭrūd</p>
   <div class="divider"></div>
-  <p class="subtitle">A reading edition of the qunūt, transliterated by Mohammed Sadat Abdulai in 2012 and transcribed here line by line from his original pages.</p>
+  <p class="subtitle">A reading edition of the qunūt: Arabic, transliteration, English and German — transcribed from Mohammed Sadat Abdulai's verified 2012 recitation transliteration.</p>
   <p class="credit">Prepared by Mohammed Sadat Abdulai</p>
 </section>
 
 <section class="card">
   <div class="section-head">
     <span class="label">The qunūt</span>
-    <span class="small">Edition 0.2</span>
+    <span class="small">Edition 0.3</span>
   </div>
   <div class="note">
-    <span class="badge">First transcription pass</span>
-    <span>This text was copied line by line from Mohammed Sadat Abdulai's 2012 typed transliteration (a clean, typed 22-page document, not a handwritten one). It has not yet had a second proofreading pass against those pages. Small grey page markers below show where each PDF page begins, to make that check easy. Arabic script has not been added yet.</span>
+    <span class="badge">AI-assisted Arabic &amp; translation</span>
+    <span>The transliteration's wording is the author's own, verified 2012 recitation transcript. The Arabic script, its diacritics, and the English and German translations here were reconstructed and translated with AI assistance and have <strong>not</strong> yet been checked by a qualified Arabic reader. Treat them as a careful draft, not a final text — see <a href="REVIEW.md" target="_blank" rel="noreferrer">REVIEW.md</a> for specifics.</span>
   </div>
-  <div class="seg" role="group" aria-label="Reading text size">
-    <button type="button" id="smaller" aria-label="Smaller text">A−</button>
-    <button type="button" id="reset" aria-label="Reset text size">Reset</button>
-    <button type="button" id="larger" aria-label="Larger text">A+</button>
+
+  <div class="settings">
+    <div class="settings-row">
+      <span class="rowlabel">Show</span>
+      <div style="display:flex;gap:6px">
+        <button type="button" class="toggle" id="toggle-translit" aria-pressed="true">Transliteration</button>
+        <button type="button" class="toggle" id="toggle-meaning" aria-pressed="true">Meaning</button>
+      </div>
+    </div>
+    <div class="settings-row">
+      <span class="rowlabel">Language</span>
+      <div class="seg lang4" role="group" aria-label="Meaning language" id="lang-group">
+        <button type="button" data-lang="en" class="active">EN</button>
+        <button type="button" data-lang="de">DE</button>
+        <button type="button" data-lang="ha" disabled>HA<span class="soon">soon</span></button>
+        <button type="button" data-lang="dag" disabled>DAG<span class="soon">soon</span></button>
+      </div>
+    </div>
+    <div class="settings-row">
+      <span class="rowlabel">Text size</span>
+      <div class="seg size3" role="group" aria-label="Reading text size">
+        <button type="button" id="smaller" aria-label="Smaller text">A−</button>
+        <button type="button" id="reset" aria-label="Reset text size">Reset</button>
+        <button type="button" id="larger" aria-label="Larger text">A+</button>
+      </div>
+    </div>
   </div>
-  <div class="reading-text" id="reading" lang="ar-Latn"></div>
+
+  <div class="reading-text" id="reading"></div>
 </section>
 
 <section class="card">
   <div class="section-head">
     <span class="label">About this edition</span>
   </div>
-  <p style="margin-top:0">This project presents Mohammed Sadat Abdulai's 2012 transliteration of the qunūt recited by Shaykh ʿAbdallāh Muḥammad al-Maṭrūd, in a clear, phone-friendly reading edition. The transliteration is reproduced as originally typed, spelling and all; nothing has been corrected or guessed.</p>
-  <p class="small" style="margin-bottom:0">Arabic script and any translation will be added later as separate, clearly labelled layers. Uncertain readings are flagged for review rather than guessed — see <a href="REVIEW.md" target="_blank" rel="noreferrer">REVIEW.md</a>.</p>
+  <p style="margin-top:0">This project presents Mohammed Sadat Abdulai's own, verified transliteration of the qunūt recited by Shaykh ʿAbdallāh Muḥammad al-Maṭrūd, in a clear, phone-friendly reading edition, alongside Arabic script and English and German translations.</p>
+  <p class="small">The transliteration follows the same academic scheme (macrons, ʿayn/hamza marks, il-/ul- assimilation) used in the companion <a href="https://masssly.github.io/wird-al-latif/" target="_blank" rel="noreferrer">al-Wird al-Laṭīf</a> edition. The Arabic and the translations are a first, AI-assisted pass awaiting a qualified reader's check — see <a href="REVIEW.md" target="_blank" rel="noreferrer">REVIEW.md</a> for exactly which lines are least certain.</p>
+  <p class="small" style="margin-bottom:0">Hausa and Dagbanli translations are planned but not yet written.</p>
 </section>
 
 </main>
@@ -136,65 +174,117 @@ a{color:var(--gold)}
   Prepared by Mohammed Sadat Abdulai
   <p class="compiled">Companion edition to <a href="https://masssly.github.io/wird-al-latif/" target="_blank" rel="noreferrer">al-Wird al-Laṭīf</a></p>
 </footer>
+<script src="data.js"></script>
 <script>
-const PAGES=[
-[1,["Sodaqollahul azeemul lazee laailaaha illaahuwal mutawahhidi biljalaalibika maaliljamaali ta azeeman watakbeeraa","Almutafarridi bitasreefil ahwaadi alattafseeri wal ijmaali taqdeerun watadbeeraa","Almuta aa lee bi azomatihee wa majidihil lazeenazzalal furqaana alaa abdihee liyakuuna lil aalameena nazeeraa","Wasodaqa Rasuulahuu sollallaahu alayhi wasallama tasleeman kaseeraa","Allazee arsalahul laahu ilal innsi wal jinni basheeran wanazeeraa","Wadaa iyan ilallaahi bi iznihee wasiraajan muneeraa","Sodaqallaahul haqqul azeemullazee nazzalal Qur aanal kareema fee shahri Ramadaana hudann watazkeeraa","Sodaqallaahul haqqul azeemullazee sanna ddeena washara a","Wanawwarannuura washa a sha a","Walaa ilaaha illaahuwa ja alas samaa a sakfan biduuni an amadir rafa a","Wal ardo bisaaton rada a a"]],
-[2,["Sodaqallaahul azeemullazee Dabbarad duhuura waqaddaral makduura wasarafal umuur","Wa ala maa waajisas suduur","Wa anzalal Qur aana hudan wanuur","Sodaqallaahul azeemullazee Azzafar tafa a","Wa alaa famtana a","Wa zalla kulla shay in li azomatihi wafado a","Sodaqallaahul haqqu tawwaabul Gafuurul Wahhaab","Allazee khoda at li a zomatihir riqaab","Walaa natliku diseeyatihish shadaa ilus silaab","Yusabbihu bihamdihir ra du wassahaab","Rabbul arbaabi wamunazzilul kitaab","Wa haazimul ahzaab","Wa musabbibul asbaab","Laa ilaaha illaa huwa alayhi tawakkal naa wa ilayhil ma aab","Sodaqallaahul haqqul Waahidul Qahhaarul azeem","Zuljalaali wal ikraami wal azomati wal in aam"]],
-[3,["Alkareemullazee mannabika nafihee alaa man shaa a min ibaad","Al Qayyuumullazee laa yanfa u walaa yanaa","Ilaahanaa","Tafaddolta fa ammat afḍaaluk","Ilaahanaa","Gafarta fatakaamala yahsaaluk","Jalla Jalaaluk","Ta aalayta fee dunuu ik","Wataqar rabta fee uluwwik","Antal Awwal wal Aakhiru waz ẓaahiru wal Baatin","Antal Waahidul Ahadun Fardus Somad","Laka khado an man sajada wazalla man wajad","Ilaahanaa kaifa yunaadeeka fis solawaati man ya a seeka fil khalawaati lawlaa hilmuk","Wakaifa yad uu kalil haajaati man yan saaka indash shahawaati lawlaa fadluk","Ilaahanaa","Man ilayhi naqsidu wa anta wahdakal maqsuud"]],
-[4,["Wa ilaa man natawajjahu wa anta wahdakal mawjuud","Wa manzallazee yu utee wa anta ṣaahibul juud","Wa manzallazee nas alu wa anntar rabbul ma aduud","§Allaahuma qaḍji inaaka bijam inaa mutawas sineen","Wabizaa bika laa izeen","Wa anaa a ataabika saa ineen","Falaa taqrudinaa khaa ideen","Wagfirlanaa zunuubanaa ajma een","Wakbal udwanaa waj al sa a yanaa mash kuuraa","Wa amalanaa manfuuraa","Wa a atikri qaabanaa wawaa lideenaa wal Muslimeena ajma eena minannaar","§Allaahumma ja alil mawta khayra raa ibil namtaziruh","Walqadru khayru baytin nu ammiruh","Waj almaa ba adahuu khayran lanaa minhu","Birahmatika yaa arhamar Raahimeen","§Allaahumma anzil alaynaa fee kubuurinan nuur"]],
-[5,["Wal farhatawas suruur","Wa ajizinaa bil ihsaani ihsaanaa","Wabis sayyi aati gufraanaa","§Allahuma ja alnaa bihaazal Qur aani muṣoddikeen","Wa feemaa indaka ilaahanaa raagibeen","Wali Rahmatika yaa mawlaanaa ṭaalibeen","Wa alis sayyi aati aazifeen","Wa minal muharramaati ba eedeen","Wa min iqaa bika khaa ifeen","Wah shurnaa ma annabiyyeena was siddeekeen","Wash shuhadaa i wal abraari was saadiheen","Wa laataj alnaa Yaa Mawlaanaa min manistahwat humush shayaaṭeen","Washagalat humud dun yaa aniddeen","Wa asbahuu mina naadimeen","Wafil aakhirati minal khaasireen","§Allaahumma innaa abeeduka banuu abeeduka banuu imaa ik","Nawaa seenaa biyadik"]],
-[6,["Maaḍin feenaa hukmuk","Adnun feenaa qaḍaa uk","Nas alukallahumma bikullismin huwalaka sammayta bihee nafsak","Aw anzaltahuu fee kitaabik","Aw a alamtahuu ahdan minkhalkik","Awista atartabihee fee ilmil ghaybi indak","Anntaj alal Qur aanal azeema rabee a kuluubinaa","Wa nuura suduurinaa","Wa jinaa i ahzaaninaa","Wa dahaa bi zumuuminaa","Wa zumuuminaa","Wasaa iqanaa ilaa jannaatika jannaatin na eem","§Allaahummaj alil Qur aana likuluubinaa ẓiyaa aa","Wali azhaa ninaa jilaa aa","Wa lizunuubinaa mumahhiṣaa","Wa aninnaari lanaa mukhalliṣaa","Wa filqabri lanaa mu u nisaa"]],
-[7,["Wa alas siraati murshidaa","Wa inal jannati daleelaa","§Allahummaj alnaa min ahlil Qur aan","§Allazeenahum amnuka wafaa satuka Yaa Rabbal aalameen","Waj alnaa mimman yuhillu halaala","Wa yuharrimu haraama","Wa ya amalu bi muhkamih","Wa yu u minu bi mutashaabih","Wayatluuhu haqqa tilaawatih","Alal wajhil lazee yurdeeka annaa","Waj alhul laahumma shaahidanlanaa yawman kuduumi ilayk","Hujjatan lanaa yawman wukuufi bayna yadayk","Yaa arhamar Raahimeen","§Allaahummag firli jamee i mawtan Muslimeen","Allazeena shahiduu nakabil wahdaaniyya","Wa binabiyyika bir risaala","Wa maatuu alaazaalik"]],
-[8,["§Allaahummag firlahum warhamhum","Wa aafihim wa afu anhum","Wa wassi i mudkhalahum","Wa akrihim nuzulahum","Waksilhum bilmaa i wassaldi wal barad","Wa nakkihim minaz zunuubi walkhataayaa kamaa yunakka sawbul abyadu minaddanas","§Allaahumman qulhum jamee an min deekin luhuudi wamaraati idduud","Ilaa jannaatil khuluud","Fee sidrin mafduud","Wa tolhim mamduud","Wa ẓillin mamduud","§Allahummaj alhum fee butuunil alhaadi mutma inneen","Wa indas su aali saabiteen","Wa bilhakki naatikeen","Wa alas siraati muhtadeen","Wa fee jannaatil firdawsi saakineen"]],
-[9,["Wa nahnu ma ahum Yaa Rabbal aalameen","Wawaalidaynaa waman lahum haqqun alaynaa","Wal Muslimeena ajma een","Warhamnaa ilaahanaa izaasidnaa ilaa maa saaruu ilayh","§Allaahumma antal Ganiyyu wa nahnul fuqaraa","Al asraa u bayna yadayk","Ilayka tawajjahnaa","Wa bibaabika anakhnaa","Wa min Rahmatika sa alnaa","Wali afwika rajawnaa","Falaa taqrudinaa khaa ibeen","Yaa Gaafiraz zunuubi izaa uhlika til abwaab","Yaa mujeerallaaji eena izaa kuti atil asbaab","Irhamhu duu anaa","Wajbir kuluubanaa","Wastud uyuubanaa","Waj al amalanaa maqbuulaa"]],
-[10,["Wa sa iyanaa mashkuuraa","Wa tijaaratanaa raabihatan lan tabuur","Wa akhrijnaa Yaa Mawlaanaa minaz zululumaati ilannur","Yaa Azeezu Yaa Gafuur","§Allaahumma Ahyinaa Muslimeen","Wa tawaffanaa Muslimeen","Wa alhiknaa bis saaliheen","Ghayra fazaayaa walaa maftuuneen","§Allaahumma a id alaynaa shaharas siyaami wal Qiyaam","Waj al aamahuu aama khayrin wabarakatil wa salaam","Wag firlanaa maa aktarafnaa feehi minaz zunuubi wal aasaam","Wa takabbal minaa jamee an maakaddamnaa feehi minas siyaami wal Qiyaam","Was solaati waddu aa i","Wazzakaati was sodaqaat","§Allaahummaksim lanaa min hashyatika maa takuulu bihee baynanaa wabayna ma a siyatik","Wamin taa atika maatuballig lanaa bihee jannatak"]],
-[11,["§Allaahumaj al sa aranaa alaa man zolamanaa","Wan surnaa alaa man aa daanaa","§Allaahummakhzul a adaa anaa","§Allaahummakhzul a adaa anaa","Wansur Mujaahideenaa","Wahfuz ihwaanananal Muslimeena fee kulli makaan","Yaa zal jalaali wal ikraam","§Allaahumma laataj alid dunyaa akbara hamminaa","Walaa mablaga ilminaa","Walaa tusallit alaynaa bizunuubinaa man laa yakhaa fuka feenaa walaa yar hamunaa","§Allaahumma laa tada a lanaa zamban illaa Gafarta","Walaa hamman illaa farrajta","Walaa daynan illaa qadayta","Walaa karban illaa naffazta","Walaa mareedon illaa shafayta","Walaa mubtalan illaa aafayta","Walaa gaa iban illaa radadta"]],
-[12,["Walaa khayraana illaa dalalta","Walaa daa iyan illaa ataaayta","Walaa taaliban illaa ataayta","§Allaahumma laa maytan minal Muslimeena illaa Rahimta","Walaa aduwwan lil Islaami illaa khadalta","Walaa haajatan min hawaa ijid dunya wal aakhira","Hiya laka ridon walanaa feehaa solaahun illaa a antanaa alaa qadaa ihaa","§Allaahummaj alijtimaa anaa feehaa zihillaylatiiti maa ammar huumaa","Wa tafarruqanaa tafarruqan maa suumaa","Walaa taj alfeenaa shakiyyan walaa mahruumaa","§Allaahumma laa taj al baynanaa wabaynaka fee rizkinaa ahdan siwaak","Waj alnaa agnaa khalkikabik","Wa aftori ibaadika ilayk","Wa hablanaa ginan laayukzeenaa","Wa sihhatan laa tulheenaa","Wa agninal laahumma amman agnaytahuu annaa"]],
-[13,["Waj al aakhirakalaa minaa minad dunyaa shahaadata anlaa ilaaha illallaah","Wa anna Muhammadan Rasuulullah","Wa tawaffanaa wa anta raadin annaa","Waj alnaa fee mawkifil kiyaamati minal aamineen","Ma allazeena laa khawfun alayhim wa laahum yahzanuun","§Allahumma aslih lanaa deena nalazee huwa ismatu amrinaa","Wa dunyaa nallatee feehaa ma aashunaa","Wa aakhira tunallatee fee haa ma aadunaa","Waj alil hayaata ziyaadatan lanaa fee kulli khayr","Wal mawta raahatan lanaa min kulli sharr","§Allaahummaj al khayra zamaaninaa aakhira","Wakhayra a amaalinaa khawaatee mahaa","Wakhayra ayyaaminaa yawma liqaa ik","Yaa Rabbal aalameen","Rabbanaa zolamnaa anfusanaa wa inlamtagfirlanaa watarhamnaa laanakuunanna minal khaasireen","Illaa hanaa wa Mawlaanaa"]],
-[14,["Harrarnaa hatmata kitaabik","§Fallaahumma takabbal haaminnaa","§Allaahumma takabbal haaminnaa","Yaa zaljalaali wal ikraam","§Allahumma agninaa bihalaalika al haraamik","Wa bifadlika amman siwaak","§Allaahumma laataftinnaa fee hayaatinaa","§Allaahumma laataftinnaa fee hayaatinaa","§Allaahumma tawaffanaa wa antaraadin annaa","§Allaahummas tur awraatinaa","Wa aamir raw aatinaa","§Allaahummas tur awraatinaa","Wa aamir raw aatinaa","Wagfir zallaatinaa","Wa aslih awlaadanaa","Wastur alaa nisaa inaa","Wahfaz jamee a ihwaaninal Muslimeen"]],
-[15,["Yaa zaljalaali wal ikraam","§Allaahumma fee haazihis saa atil Mubaarakatil kareema","Wa fee haazihil laylatil Mubaaraka","A atikri qaabanaa minannaar","§Allaahumma a atikri qaabanaa minannaar","Yaa Mawlaanaa wa Yaa amalanaa a atikri qaabanaa minannaar","Yaa zaljalaali wal ikraam","Ilaahanaa wa Mawlaanaa","Manlanaa izaa qarattanaa min baabik","Ilaahanaa wa Mawlaanaa","Antara jaa unaa wa amalunaa","Yaa Rajaa anaa wa Yaa amalanaa laa taqrudinaa khaa ibeen","§Allaahumma takabbal minnaa maa amilnaa fee haazash shahril Kareem","Yaa zaljalaali wal ikraam","§Allaahumma innaa waqafnaa bi baabika khaadi eena khaashi een","Narjuu Rahmataka wa nakhshaa azaabak"]],
-[16,["§Allaahummarham do afanaa","§Allaahummarham do afanaa","§Allaahummarham fushuu anaa","§Allaahummarham tadorru anaa","§Allaahummarham binaa batanaa","§Allaahummarham tawbatanaa","§Allaahummanzurnaa bi rahmatik","Yaa zaljalaali wal ikraam","Fa in torattanaa falaa hawlananaa wa laakuwwata illaabik","§Allaahumma yaaman khalaqas samaawaati wal ard","Wa yaaman biyadihil amru kullu","Wa yaaman izaa araada shay an qaala lahuu kunfa kaan","§Allaahumma laa taruddanee wa ikhwaanee min baabika wa mahruumeen","Yaa zaljalaali wal ikraam","§Allaahumma munna alaynaa bi tawbatin kablal mamaat","§Allaahumma munna alaynaa bi tawbatin kablal mamaat","War hamnaa indal mamaat"]],
-[17,["§Allaahummar hamnaa izaajaa at sakaraatul mawwt","Yaa zaljalaali wal ikraam","Gufraanaka Gufraanak","Laa ilaaha illaa ant","Laa ilaaha illallaah","Zul Mulki wal kuwwati wal jabaruut","§Allaahummar hamnaa izaa taqaayaratis suhufu wahaffatil mawaazee","§Allaahummar hamnaa izaa nusibas siraak","§Allaahummar hamnaa izaa zafaratinnar","Yaa zaljalaali wal ikraam","Yaa saami as sawt","Wa yaa saabi kal fawt","Wayaa kaasiyal izaama lahman ba a dal mawt","§Allaahumma innaa jisaadanaa alannaari laa taqwaa","Falaa tu az zibnaa bimaa amilnaa","Yaa zaljalaali wal ikraam","§Allaahummar tafa atil aswaatu bil bukaa i wannaheem"]],
-[18,["Falaa taruddanaa min baa bika yaa arhamar Raahimeen","§Allaahumma laa taruddanaa min baa bika yaa arhamar Raahimeen","§Allaahumma taqabbal minnaa imaalanaa","Waj al haa khaalisotan liwajhikal kareem","§Allaahumma laa tahrimnaa ajra shahri Ramadaan","§Allaahumma laa tahrimnaa ajra shahrinaa haazaa","Wa laa taftimnaa ba ada","Yaa zaljalaali wal ikraam","Wa sobbirnaa alaa taa atika wa alas solaat","Yaa zaljalaali wal ikraam","§Allaahummag firlanaa ajma een","Wa habil musee yeena minnaa lil Muslimeen","§Allaahummaj alnaa fee kulli harfin qara anaahu min kitaabika hasanaat","Yaa zaljalaali wal ikraam","§Allaahumma jammilnaa bil Qur aan","§Allaahumma jammilnaa bil Qur aan"]],
-[19,["Wa nawwirnaa bil eemaan","Yaa zaljalaali wal ikraam","§Allaahumma fee haazihillaylatil Mubaaraka","Wa fee haazal masjidil Mubaarak","Laa yanfattu haazal jam a illaa bi zambim magfuur","Yaa zaljalaali wal ikraam","§Allaahumma agifkuluubanaa bil ilmi walyakeen","Wa tawaffanaa wa anta raagin annaa","Yaa arhamar Raahimeen","Wa aatinaa fiddunyaa hasana","Wafil aakhirati hasana","Wa kinaa azaaban naar","Wa ad hilnan jannata ma al abraar","Bi Rahmatika Yaa Azeezu Yaa Gaffaar","§Allaahumma innash tatnaa li ruuyati habeebinaa Muhammadin sollallaahu alayhi wassallam","Fahshur nallaahumma ma a","Wa awridnaa hawra"]],
-[20,["§Allaahumma khuzbi aydeenaa fee yad hee ilaa jannaatinnaa eem","Yaa zaljalaali wal ikraam","§Allaahumma innash taknaa izaa sohaabatihil mukarrameen","Fayaa Rabbanaa laa tahrimnaa ajrahum","Wahshur naa ma ahum","Yaa zaljalaali wal ikraam","§Allaahumma innaa nush hiduka annanaa nuhibbuhum","Wa nuhibbu man yuhibbuhum","Fahshurnaa waman ahabbahum ma ahum Yaa Rabbal aalameen","Wa ahli killaahumma man abraḍohum","Wal anil laahumma manla anahum","Yaa zaljalaali wal ikraam","§Allaahumma qayyibu khawaa qiranaa binasratil Islaami wal Muslimeen","§Allaahumma qayyibu khawaa qiranaa binasril Islaami wal Muslimeen","Fee kulli makaan"]],
-[21,["§Allaahumma aaminnaa fee waqninaa haazaa","Wa saa ira binaadin Muslimeen","Wa aslihil laahumma imaamanaa limaa tuhibbuhuu wa tardaa","Wa aslihil laahumman maraa ahuu wa uzraa ahuu wa ulamaa ahuu limaa feehi khayril Islaami wal Muslimeen","Wa Baarik lanaa fee ulamaa inaa","§Allaahumma Baarik lanaa fee ulamaa inaa","Wahfaz humul laahumma lanaa","Wa qawwiril laahumma fil khayri a amaalahum wa a amaarahum","Yaa zaljalaali wal ikraam","§Allaahumma wassik tolabatal ilmi fee bilaadinaa limaafeeh khayruhum was solaatahum","Fee deenihim wa dunyaahum wa aakhiratahum","Wahdil laahumma shabaabanaa","§Allaahummahdi shabaabanaa","§Allaahummahdi shabaabanaa","Wahfaz nisaa anaa","Wa banaatinaa"]],
-[22,["Yaa zaljalaali wal ikraam","Subhaana Rabbika Rabbil izzati ammaa yasifuun","Wasalaamun alal Mursaleen","Wal hamdulillaahi Rabbil aalameen"]]
-];
-
 (()=>{
   const root=document.getElementById('reading');
-  const frag=document.createDocumentFragment();
-  PAGES.forEach(([n,lines])=>{
-    const mark=document.createElement('div');
-    mark.className='pagemark';
-    mark.textContent='p. '+n;
-    frag.appendChild(mark);
-    lines.forEach(line=>{
-      const open=line.startsWith('§');
-      const p=document.createElement('p');
-      if(open){p.className='open';line=line.slice(1);}
-      p.textContent=line;
-      frag.appendChild(p);
+
+  const STORE_KEY='qunut-settings-v1';
+  const defaults={sizeIdx:1,translit:true,meaning:true,lang:'en'};
+  let settings;
+  try{
+    const raw=JSON.parse(localStorage.getItem(STORE_KEY));
+    settings=raw&&typeof raw==='object'?{...defaults,...raw}:{...defaults};
+  }catch(e){settings={...defaults};}
+
+  const AR_SIZES=[22,28,34,40,48];
+  const LAT_SIZES=[13,16,19,22,26];
+  const ENABLED_LANGS=['en','de'];
+  const COMING_SOON={ha:'Hausa translation coming soon.',dag:'Dagbanli translation coming soon.'};
+
+  function save(){
+    try{localStorage.setItem(STORE_KEY,JSON.stringify(settings));}catch(e){}
+  }
+
+  function render(){
+    root.innerHTML='';
+    const frag=document.createDocumentFragment();
+
+    if(settings.meaning && !ENABLED_LANGS.includes(settings.lang)){
+      const note=document.createElement('div');
+      note.className='coming-soon';
+      note.textContent=COMING_SOON[settings.lang]||'Translation coming soon.';
+      frag.appendChild(note);
+    }
+
+    QUNUT.forEach(([pageNum,lines])=>{
+      const mark=document.createElement('div');
+      mark.className='pagemark';
+      mark.textContent='p. '+pageNum;
+      frag.appendChild(mark);
+
+      lines.forEach(item=>{
+        const wrap=document.createElement('div');
+        wrap.className='line'+(item.open?' open':'');
+
+        const ar=document.createElement('p');
+        ar.className='ar';
+        ar.lang='ar';
+        ar.dir='rtl';
+        ar.textContent=item.ar;
+        wrap.appendChild(ar);
+
+        if(settings.translit){
+          const lat=document.createElement('p');
+          lat.className='lat';
+          lat.lang='ar-Latn';
+          lat.textContent=item.lat;
+          wrap.appendChild(lat);
+        }
+
+        if(settings.meaning && ENABLED_LANGS.includes(settings.lang)){
+          const meaning=document.createElement('p');
+          meaning.className='meaning';
+          meaning.lang=settings.lang;
+          meaning.textContent=settings.lang==='de'?item.de:item.en;
+          wrap.appendChild(meaning);
+        }
+
+        frag.appendChild(wrap);
+      });
+    });
+
+    root.appendChild(frag);
+    root.style.setProperty('--ar',AR_SIZES[settings.sizeIdx]+'px');
+    root.style.setProperty('--lat',LAT_SIZES[settings.sizeIdx]+'px');
+  }
+
+  const translitBtn=document.getElementById('toggle-translit');
+  const meaningBtn=document.getElementById('toggle-meaning');
+  const langButtons=[...document.querySelectorAll('#lang-group button')];
+  const sizeButtons={smaller:document.getElementById('smaller'),reset:document.getElementById('reset'),larger:document.getElementById('larger')};
+
+  function syncControls(){
+    translitBtn.setAttribute('aria-pressed',String(settings.translit));
+    meaningBtn.setAttribute('aria-pressed',String(settings.meaning));
+    langButtons.forEach(b=>b.classList.toggle('active',b.dataset.lang===settings.lang));
+    sizeButtons.reset.classList.toggle('active',settings.sizeIdx===defaults.sizeIdx);
+  }
+
+  translitBtn.addEventListener('click',()=>{
+    settings.translit=!settings.translit;save();syncControls();render();
+  });
+  meaningBtn.addEventListener('click',()=>{
+    settings.meaning=!settings.meaning;save();syncControls();render();
+  });
+  langButtons.forEach(b=>{
+    if(b.disabled)return;
+    b.addEventListener('click',()=>{
+      settings.lang=b.dataset.lang;save();syncControls();render();
     });
   });
-  root.appendChild(frag);
+  sizeButtons.larger.addEventListener('click',()=>{
+    settings.sizeIdx=Math.min(AR_SIZES.length-1,settings.sizeIdx+1);save();syncControls();render();
+  });
+  sizeButtons.smaller.addEventListener('click',()=>{
+    settings.sizeIdx=Math.max(0,settings.sizeIdx-1);save();syncControls();render();
+  });
+  sizeButtons.reset.addEventListener('click',()=>{
+    settings.sizeIdx=defaults.sizeIdx;save();syncControls();render();
+  });
 
-  const sizes=[16,19,22,26,30];
-  const DEFAULT_I=1;
-  const raw=localStorage.getItem('qunut-text-size-i');
-  let i=raw===null?DEFAULT_I:Number(raw);
-  if(!Number.isInteger(i)||i<0||i>=sizes.length) i=DEFAULT_I;
-  const buttons={smaller:document.getElementById('smaller'),reset:document.getElementById('reset'),larger:document.getElementById('larger')};
-  const draw=()=>{
-    root.style.setProperty('--lat',sizes[i]+'px');
-    localStorage.setItem('qunut-text-size-i',i);
-    buttons.reset.classList.toggle('active', i===DEFAULT_I);
-  };
-  buttons.larger.addEventListener('click',()=>{i=Math.min(sizes.length-1,i+1);draw();});
-  buttons.smaller.addEventListener('click',()=>{i=Math.max(0,i-1);draw();});
-  buttons.reset.addEventListener('click',()=>{i=DEFAULT_I;draw();});
-  draw();
+  syncControls();
+  render();
 })();
 </script>
 </body>

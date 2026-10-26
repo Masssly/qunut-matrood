@@ -7,18 +7,20 @@ An open, phone-first reading edition of the qunūt text prepared by Mohammed Sad
 ## Project goals
 
 - A comfortable mobile reading experience.
-- A carefully checked transcription of the supplied 22-page PDF (the author's own 2012 transliteration).
-- Clear separation between the source text, transcription, editorial notes, transliteration, and any future translation.
-- Adjustable text size and a downloadable, print-friendly edition once the text has been checked.
+- A verified transcription of the supplied 22-page PDF (the author's own 2012 transliteration), with Arabic script, transliteration, and English/German translations as separate, clearly labelled layers.
+- Adjustable text size, and toggles for which layers to show.
+- A downloadable, print-friendly edition once the Arabic and translations have been checked.
 - A static website that can be hosted free on GitHub Pages.
 
 ## Editorial status
 
-The supplied PDF is a 22-page typed document: Mohammed Sadat Abdulai's own 2012 Latin-script transliteration of the qunūt, not a third-party source. It has been transcribed line by line into `index.html` (page markers included for checking), but that transcription has had only one reading pass against the original pages, not a second proofread. Arabic script has not been added. Do not silently correct or complete uncertain transliteration or wording. See [REVIEW.md](REVIEW.md).
+The supplied PDF is a 22-page typed document: Mohammed Sadat Abdulai's own 2012 Latin-script transliteration of the qunūt, not a third-party source, and the wording has been **verified by the author**. It has been transcribed line by line into `data.js`, re-cast into the same academic transliteration scheme (macrons, ʿayn/hamza, il-/ul- liaison) used by the companion [al-Wird al-Laṭīf](https://masssly.github.io/wird-al-latif/) edition.
+
+Vocalized Arabic script and English/German translations have since been added for every line, reconstructed and translated with AI assistance. **These have not yet been checked by a qualified Arabic reader** — see [REVIEW.md](REVIEW.md) for the specific lines flagged as least certain. Hausa and Dagbanli translations are planned but not yet written. Do not silently correct or complete uncertain Arabic or wording — record doubts in REVIEW.md instead.
 
 ## Development
 
-The site is plain HTML, CSS, and JavaScript; no build step or paid service is required.
+The site is plain HTML, CSS, and JavaScript; no build step or paid service is required. All text lives in `data.js` (one `{ar, lat, en, de, open}` object per recited line, grouped by original PDF page) — edit that file to correct a line, not `index.html`'s rendering of it.
 
 ## Publishing
 
