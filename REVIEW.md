@@ -86,3 +86,19 @@ Per REVIEW.md's own standing rule: where the ASR disagreed with a line already c
 ## Important distinction
 
 Treat the transliteration's wording as settled (author-verified) and do not change it without the owner's say-so. Treat the Arabic script and the EN/DE translations as an unproofread first pass: do not present them as more certain than they are, and record doubts here rather than silently "fixing" them.
+
+### Follow-up: comparison with the human-prepared on-screen Arabic (2026-10-28)
+
+The owner supplied the video file and clarified that the Arabic shown on screen is believed to be human-prepared, while the pasted transcript was machine-generated. For now, where the on-screen reading is clear and makes good grammatical and contextual sense, it takes precedence over the noisy ASR transcript. This is a source-priority decision, not a claim that every on-screen word has been independently verified by an Arabic specialist.
+
+**High-confidence changes made in `data.js`:**
+- p.3: `يُنَادِيكَ` (*yunādīka*, “call upon You”) changed to `يُنَاجِيكَ` (*yunājīka*, “confide/address You intimately”), matching the on-screen text and improving the meaning of the rhetorical question. English and German were adjusted accordingly.
+- p.4: `وَعَمَلَنَا مَوْفُورًا` (*mawfūrā*, “abundant”) changed to `وَعَمَلَنَا مَغْفُورًا` (*maghfūrā*, “forgiven”), matching the on-screen text and making the paired supplication coherent: accept our excuse, make our efforts appreciated, and forgive our deeds. The transliteration and both translations were updated. This supersedes the earlier ASR-based choice of *mawfūrā* recorded above; the conflict is now resolved in favor of the human-prepared on-screen reading.
+- p.9: `الْأَسْرَاءُ` changed to `الْأَسْرَى` (*al-asrā*, “the captives”), matching the on-screen spelling and the intended phrase `الأسرى بين يديك`. The transliteration was updated.
+
+**Still unresolved; do not change without further discussion:**
+- p.3: the phrase around `مَنَّ بِنَفْعِهِ` / the alternative suggested by the supplied transcript. We need to inspect the on-screen Arabic closely and listen to the audio before choosing a reading.
+- p.19: the current `اقْذِفْ فِي قُلُوبِنَا الْعِلْمَ وَالْيَقِينَ` versus the on-screen alternative reported as `أَغِثْ قُلُوبَنَا بِالْعِلْمِ وَالْيَقِينِ`. Both require careful checking against the actual frame/audio and Arabic grammar before deciding.
+- Any other disagreement between the on-screen text, spoken wording, transliteration, and translations remains a review item until the evidence is clear.
+
+No interface changes were made in this stage. The website and deployment workflow remain untouched.
