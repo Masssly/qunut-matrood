@@ -25,14 +25,21 @@ The owner supplied a screenshot of an external reference source showing the corr
 
 A second round from the owner covered p.1 lines 4–7 ("Wasodaqa Rasuulahuu...", "Allazee arsalahul laahu...", "Wadaa iyan ilallaahi...", "Sodaqallaahul haqqul azeemullazee nazzalal Qur aanal kareema..."): all four already matched the source exactly, word for word. The only addition was noting that "Wadaa iyan ilallaahi bi iznihee wasiraajan muneeraa" is itself a direct quote of **Qurʾān 33:46**, which the source marks with a citation — added to the EN/DE text.
 
+A third round covered p.1 lines 8–11 and p.2 lines 1–2. This one found real corrections, including two that resolve lines previously flagged below as uncertain:
+- p.1, "Wanawwarannuura washa a sha a" (**previously flagged** as uncertain): was *wa anāra-n-nūra wa shāʾa mā shāʾ* (AI guess); corrected to *wa nawwara-n-nūra wa shaʿshaʿahu* ("and lit up the light, and made it shine resplendently") per the source. Flag removed below.
+- p.1, "Wal ardo bisaaton rada a a" (**previously flagged** as uncertain): was *wa-l-arḍa bisāṭan farashahā* ("spread it out", AI guess); corrected to *wa-l-arḍa bisāṭan waḍaʿahu* ("laid it down") per the source. Flag removed below.
+- p.1, "Sodaqallaahul haqqul azeemullazee sanna ddeena washara a": minor fix, *wa sharaʿ* → *wa sharaʿahu* (object pronoun restored).
+- p.1, "Walaa ilaaha illaahuwa ja alas samaa a...": minor fix, the closing pronoun is *rafaʿahu* (referring to the roof/ceiling, masculine), not *rafaʿahā*.
+- p.2, "Wa ala maa waajisas suduur": was *wa ʿalima wasāwisa-ṣ-ṣudūr* ("knew the whispers of hearts", AI guess); corrected to *wa ʿalima hājisa-ṣ-ṣudūr* ("knew the innermost thoughts of hearts") per the source.
+- p.2, "Sodaqallaahul azeemullazee Dabbarad duhuura..." and "Wa anzalal Qur aana hudan wanuur": checked against the source and already matched exactly — no change.
+
 This confirms the overall reconstruction approach is sound where it leans on recognizable fixed wording, but line-by-line checking against a real source beats AI reconstruction every time. If the owner can share more of this source (or where it's from), the rest of the flagged lines below should be checked against it before anything else.
 
 ### Arabic/translation lines flagged as least certain (first AI pass — needs a qualified reader)
 
 These are best-effort reconstructions from the phonetic spelling, not drawn from a known fixed text. Everything else leans on recognizable Qurʾān verses, the Janāzah duʿā, or well-known ḥadīth formulas and is comparatively higher-confidence, but none of the Arabic has had a scholarly check yet.
 
-- p.1: "Wanawwarannuura washa a sha a" (reconstructed as *wa anāra-n-nūra wa shāʾa mā shāʾ*) and "Wal ardo bisaaton rada a a" (*wa-l-arḍa bisāṭan farashahā* — "rada a a" is a guess at "farashahā").
-- p.2: "Sodaqallaahul azeemullazee Azzafar tafa a" / "Wa alaa famtana a" (guessed as *aẓfara mani-ttaqā* / *ʿalā mani-mtuḥina* — low confidence); "Wa ala maa waajisas suduur" (*wa ʿalima wasāwisa-ṣ-ṣudūr*); "Walaa natliku diseeyatihish shadaa ilus silaab" (*wa lā nuṭīqu shiddata sulṭānih* — loose paraphrase); "Wa zalla kulla shay in li azomatihi wafado a" (second clause guessed as *wa khaḍaʿ*).
+- p.2: "Sodaqallaahul azeemullazee Azzafar tafa a" / "Wa alaa famtana a" (guessed as *aẓfara mani-ttaqā* / *ʿalā mani-mtuḥina* — low confidence); "Walaa natliku diseeyatihish shadaa ilus silaab" (*wa lā nuṭīqu shiddata sulṭānih* — loose paraphrase); "Wa zalla kulla shay in li azomatihi wafado a" (second clause guessed as *wa khaḍaʿ*).
 - p.3: "Alkareemullazee mannabika nafihee…" and "Al Qayyuumullazee laa yanfa u walaa yanaa" (ending reconstructed, uncertain); "Laka khado an man sajada wazalla man wajad" (second clause uncertain).
 - p.4: "Allaahuma qaḍji inaaka bijam inaa mutawas sineen", "Wabizaa bika laa izeen", "Wa anaa a ataabika saa ineen" (all loosely reconstructed); "Wa amalanaa manfuuraa" (assumed close to "mashkūrā", may be a distinct word); "Walqadru khayru baytin" (assumed "wa-l-qabru", d/b transcription).
 - p.9: "Irhamhu duu anaa" (guessed as *irḥam ḍuʿfanā*).
