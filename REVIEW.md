@@ -15,6 +15,16 @@ The full text lives in `data.js`, one `{ar, lat, en, de, open}` object per recit
 - More generally: the transliteration was taken down by ear from the live recitation, not from a written source. Where its phonetic spelling has a small quirk or an apparent near-repeat, the default is to treat it as an intentional recitation feature, not a typo — unless it is clearly a scanning/typing artifact.
 - p.18: a small handwritten caret in the scan, near "Allaahummaj a⌃naa fee kulli harfin qara anaahu…", was read as an inserted "l" ("alnaa"); kept as transcribed.
 
+### Source-verified corrections
+
+The owner supplied a screenshot of an external reference source showing the correct Arabic for the start of p.1. Two corrections were made against it:
+
+- p.1, line 1 ("Sodaqollahul azeemul lazee..."): was *al-Mutawaḥḥidu bi-l-Jalāli wa-l-Kamāli wa-l-Jamāli taʿaẓẓuman wa takabburā* (AI guess); corrected to *al-Mutawaḥḥidu bi-l-Jalāli, bi-kamāli-l-Jamāli, taʿẓīman wa takbīrā* per the source.
+- p.1, line 3 ("Almuta aa lee bi azomatihee..."): was a paraphrase (*al-Mutaʿālī ...-lladhī anzala-l-Furqāna...*); corrected to the source's exact wording, which quotes **Qurʾān 25:1** directly: *al-Mutaʿālī bi-ʿaẓamatihi wa majdihi, tabāraka-lladhī nazzala-l-Furqāna ʿalā ʿabdihi li-yakūna li-l-ʿālamīna nadhīrā*.
+- p.1, line 2 ("Almutafarridi bitasreefil...") was checked against the same source and found to already match exactly — no change needed.
+
+This confirms the overall reconstruction approach is sound where it leans on recognizable fixed wording, but line-by-line checking against a real source beats AI reconstruction every time. If the owner can share more of this source (or where it's from), the rest of the flagged lines below should be checked against it before anything else.
+
 ### Arabic/translation lines flagged as least certain (first AI pass — needs a qualified reader)
 
 These are best-effort reconstructions from the phonetic spelling, not drawn from a known fixed text. Everything else leans on recognizable Qurʾān verses, the Janāzah duʿā, or well-known ḥadīth formulas and is comparatively higher-confidence, but none of the Arabic has had a scholarly check yet.
