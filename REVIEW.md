@@ -23,6 +23,8 @@ The owner supplied a screenshot of an external reference source showing the corr
 - p.1, line 3 ("Almuta aa lee bi azomatihee..."): was a paraphrase (*al-Mutaʿālī ...-lladhī anzala-l-Furqāna...*); corrected to the source's exact wording, which quotes **Qurʾān 25:1** directly: *al-Mutaʿālī bi-ʿaẓamatihi wa majdihi, tabāraka-lladhī nazzala-l-Furqāna ʿalā ʿabdihi li-yakūna li-l-ʿālamīna nadhīrā*.
 - p.1, line 2 ("Almutafarridi bitasreefil...") was checked against the same source and found to already match exactly — no change needed.
 
+A second round from the owner covered p.1 lines 4–7 ("Wasodaqa Rasuulahuu...", "Allazee arsalahul laahu...", "Wadaa iyan ilallaahi...", "Sodaqallaahul haqqul azeemullazee nazzalal Qur aanal kareema..."): all four already matched the source exactly, word for word. The only addition was noting that "Wadaa iyan ilallaahi bi iznihee wasiraajan muneeraa" is itself a direct quote of **Qurʾān 33:46**, which the source marks with a citation — added to the EN/DE text.
+
 This confirms the overall reconstruction approach is sound where it leans on recognizable fixed wording, but line-by-line checking against a real source beats AI reconstruction every time. If the owner can share more of this source (or where it's from), the rest of the flagged lines below should be checked against it before anything else.
 
 ### Arabic/translation lines flagged as least certain (first AI pass — needs a qualified reader)
