@@ -98,7 +98,12 @@ The owner supplied the video file and clarified that the Arabic shown on screen 
 
 **Still unresolved; do not change without further discussion:**
 - p.3: the phrase around `مَنَّ بِنَفْعِهِ` / the alternative suggested by the supplied transcript. We need to inspect the on-screen Arabic closely and listen to the audio before choosing a reading.
-- p.19: the current `اقْذِفْ فِي قُلُوبِنَا الْعِلْمَ وَالْيَقِينَ` versus the on-screen alternative reported as `أَغِثْ قُلُوبَنَا بِالْعِلْمِ وَالْيَقِينِ`. Both require careful checking against the actual frame/audio and Arabic grammar before deciding.
+- p.19: resolved in favor of the human-prepared on-screen reading `أَغِثْ قُلُوبَنَا بِالْعِلْمِ وَالْيَقِينِ`, which is now in `data.js`. English and German were updated to reflect the sense of bringing relief/help to our hearts through knowledge and certainty.
 - Any other disagreement between the on-screen text, spoken wording, transliteration, and translations remains a review item until the evidence is clear.
 
 No interface changes were made in this stage. The website and deployment workflow remain untouched.
+
+
+### Follow-up: page 19 decision (2026-10-28)
+
+Following review of the on-screen Arabic, the owner approved changing p.19 to `اللَّهُمَّ أَغِثْ قُلُوبَنَا بِالْعِلْمِ وَالْيَقِينِ`. The transliteration is now *Allāhumma aghith qulūbanā bi-l-ʿilmi wa-l-yaqīn*. English: “O Allah, bring our hearts relief through knowledge and certainty”; German: “O Allah, schenke unseren Herzen durch Wissen und Gewissheit Hilfe und Stärkung.” Page 3 remains unchanged pending explicit resolution of its disputed word; the owner notes that the audio sounds clear to them, but the exact reading has not yet been documented in this review log.
